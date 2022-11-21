@@ -1,9 +1,16 @@
 import "./App.css";
+import Shoplist from "./components/Home/Shoplist";
+import Banner from "./components/Home/Banner";
+import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello! React Shopping Cart</h1>
+      <NavBar />
+      <Banner />
+      <Shoplist />
+      <Footer />
     </div>
   );
 }
