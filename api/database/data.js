@@ -30,13 +30,13 @@ module.exports = [
     price: 60,
   },
   {
-    id: "5",
+    id: "6",
     name: "Be Curious Book",
     image: "../images/beCuriousBook.png",
     price: 10,
   },
   {
-    id: "6",
+    id: "7",
     name: "WYWM Book",
     image: "../images/beCuriousBook.png",
     price: 15,
