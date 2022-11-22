@@ -14,7 +14,6 @@ function App() {
     const res = await fetch(url);
     const data = await res.json();
     setItems(data);
-    console.log(items);
   };
 
   useEffect(() => {
