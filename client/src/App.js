@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 
 import "./App.css";
 import Shoplist from "./components/Home/Shoplist";
 import Banner from "./components/Home/Banner";
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
+import Footer from "./components/Home/Footer";
+import NavBar from "./components/Home/NavBar";
+import Card from "./components/UI/Card";
 
 function App() {
   const [items, setItems] = useState(null);
@@ -21,12 +22,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <Fragment>
       <NavBar />
       <Banner />
-      {items && <Shoplist items={items} />}
+      <Card>{items && <Shoplist items={items} />}</Card>
       <Footer />
-    </div>
+    </Fragment>
   );
 }
 

@@ -1,4 +1,5 @@
-import ShopItem from "./ShopItem";
+import ShopItem from "./ShopItems/ShopItem";
+import itemClasses from "./ShopItems/ShopItem.module.css";
 
 const Shoplist = ({ items }) => {
   const displayedItems = items.map((item) => (
@@ -9,7 +10,12 @@ const Shoplist = ({ items }) => {
       price={item.price}
     />
   ));
-  return <div>{displayedItems}</div>;
+  return (
+    <div>
+      <h2>The Latest Trend</h2>
+      <ul className={itemClasses.cards}>{displayedItems}</ul>
+    </div>
+  );
 };
 
 export default Shoplist;
