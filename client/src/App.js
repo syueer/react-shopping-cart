@@ -1,14 +1,16 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect } from "react";
 
 import "./App.css";
 import Shoplist from "./components/Home/Shoplist";
 import Banner from "./components/Home/Banner";
 import Footer from "./components/Home/Footer";
-import NavBar from "./components/Home/NavBar";
 import Card from "./components/UI/Card";
+import Cart from "./components/Cart/Cart";
+import CartProvider from "./store/CartProvider";
 
 function App() {
   const [items, setItems] = useState(null);
+  const [cartIsShown, setCartIsShown] = useState(false);
 
   const getItems = async () => {
     const url = "/shopitems";
@@ -17,17 +19,25 @@ function App() {
     setItems(data);
   };
 
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
+
   useEffect(() => {
     getItems();
   }, []);
 
   return (
-    <Fragment>
-      <NavBar />
-      <Banner />
+    <CartProvider>
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
+      <Banner onShowCart={showCartHandler} />
       <Card>{items && <Shoplist items={items} />}</Card>
       <Footer />
-    </Fragment>
+    </CartProvider>
   );
 }
 

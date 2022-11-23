@@ -4,6 +4,7 @@ import itemClasses from "./ShopItems/ShopItem.module.css";
 const Shoplist = ({ items }) => {
   const displayedItems = items.map((item) => (
     <ShopItem
+      key={item._id}
       id={item._id}
       image={item.image}
       name={item.name}
