@@ -1,0 +1,30 @@
+.main-footer {
+    color: white;
+    background-color: #a06a34;
+    padding-top: 1.5em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .container {
+    padding: 1em;
+    text-align: center;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: row;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .text {
+    font-size: 0.8em;
+    margin: 0 auto;
+  }
