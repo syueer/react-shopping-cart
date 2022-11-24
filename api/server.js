@@ -12,6 +12,8 @@ const dbURL = process.env.MONGODB_URL;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
+
 const Item = require("../api/models/shopItemModel");
 
 // Configure routes
